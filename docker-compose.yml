@@ -1,0 +1,27 @@
+version: '3.8'
+services: 
+  db:
+    image: postgres:15-alpine
+    restart: unless-stopped
+    env_file:
+      - .env.development
+    environment:
+      POSTGRES_USER: "${POSTGRES_USER}"
+      POSTGRES_PASSWORD: "${POSTGRES_PASSWORD}"
+      POSTGRES_DB: "${POSTGRES_DB}"
+    ports:
+      - '5432:5432'
+    volumes:
+      - db:/var/lib/postgresql/data
+  adminer:
+    image: adminer
+    restart: unless-stopped
+    ports:
+      - 8080:8080
+    volumes:
+      - adminer:/var/lib/postgresql/data
+volumes:
+  db:
+    name: ${POSTGRES_VOLUME_ID}
+  adminer:
+    name: ${ADMINER_VOLUME_ID}

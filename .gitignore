@@ -1,4 +1,13 @@
 # ignore appsettings.json
+appsettings.json
 
-appsettings.json
-appsettings.json
+#ignore .env
+
+.env.development
+.env.production
+
+#ignore bin
+bin
+
+#ignore obj
+obj
