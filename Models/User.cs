@@ -8,12 +8,12 @@ public enum Roles
 }
 public class User
 {
-    public string? UserId { get; set; }
-    public string? FirstName { get; set; }
-    public string? LastName { get; set; }
-    public string? Email { get; set; }
-    public string? Password { get; set; }
-    public string? Username { get; set; }
+    public string UserId { get; set; } = null!;
+    public string FirstName { get; set; } = null!;
+    public string LastName { get; set; } = null!;
+    public string Email { get; set; } = null!;
+    public string Password { get; set; } = null!;
+    public string Username { get; set; } = null!;
     public Roles Role { get; set; }
     public string? ShippingAddress { get; set; }
     public DateTime CreateAt { get; set; }
